@@ -8,6 +8,6 @@ services:
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
     volumes:
-      - ./data:/app/data  # Single directory for all persistent data
-      - /absolute/path/to/cookies.txt:/app/cookies.txt
+      - ./data:/app/data  # Directory for persistent data
+      - /home/amin/cookies.txt:/app/cookies.txt  # Absolute path for cookies.txt
     restart: unless-stopped
