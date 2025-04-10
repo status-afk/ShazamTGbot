@@ -1,3 +1,4 @@
+version: "3.9"
 services:
   bot:
     build:
@@ -5,10 +6,13 @@ services:
       dockerfile: Dockerfile
     container_name: shazam_telegram_bot
     environment:
-      - BOT_TOKEN=${BOT_TOKEN}
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
     volumes:
-      - ./data:/app/data  # Ma'lumotlarni saqlash uchun jild
-    restart: unless-stopped  # Konteyner o'chganda avto-qayta ishga tushadi
+      - downloads:/app/downloads
+      - users:/app/users.json
+      - ./cookies.txt:/app/cookies.txt
+    restart: unless-stopped
 
 volumes:
-  data:  # Ma'lumotlarni saqlash uchun nomlangan jild
+  downloads:
+  users:
