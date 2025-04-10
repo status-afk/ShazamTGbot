@@ -8,11 +8,5 @@ services:
     environment:
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
     volumes:
-      - downloads:/app/downloads
-      - users:/app/users.json
-      - ./cookies.txt:/app/cookies.txt
+      - ./data:/app/data  # Single directory for all persistent data
     restart: unless-stopped
-
-volumes:
-  downloads:
-  users:
