@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: shazam_telegram_bot
     environment:
-      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - BOT_TOKEN=${BOT_TOKEN}
     volumes:
       - ./data:/app/data  # Single directory for all persistent data
     restart: unless-stopped
