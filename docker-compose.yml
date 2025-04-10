@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   bot:
     build:
@@ -8,6 +7,8 @@ services:
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
     volumes:
-      - ./data:/app/data  # Directory for persistent data
-      - /home/amin/cookies.txt:/app/cookies.txt  # Absolute path for cookies.txt
-    restart: unless-stopped
+      - ./data:/app/data  # Ma'lumotlarni saqlash uchun jild
+    restart: unless-stopped  # Konteyner o'chganda avto-qayta ishga tushadi
+
+volumes:
+  data:  # Ma'lumotlarni saqlash uchun nomlangan jild

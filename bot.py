@@ -111,8 +111,9 @@ def search_youtube(song_name):
     """Search YouTube for a song and return up to 10 filtered video results."""
     ydl_opts = {
         "quiet": True,
+        "extract_flat": False,  # Full info for webpage_url
+        "force_generic_extractor": False,
         "skip_download": True,
-        "cookies": "/app/cookies.txt",
     }
 
     logger.info(f"Searching YouTube for: {song_name}")
