@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: shazam_telegram_bot
+    container_name: muzox_telegram_bot
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
     volumes:
